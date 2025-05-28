@@ -1,0 +1,86 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;                         /*hacemos un reset de estilos general a todo el cuerpo*/
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+body{                                 /*colocamos el espcio entre el contenido y el margin de 2 rem lo que equivale a dos veces el tamaño de la fuente establecida, que es de 16 px al contenedor de todo*/
+    padding: 2rem;             
+
+}
+.cuerpo{                              /*modificamos el div contenedor de todos los elementos de la calculadora display y buttons*/
+    background-color: black;
+    box-sizing: border-box;           /*con esto hacemos que el tamaño del contenedor incluya tanto tading como border y content, debemos procurar establecer esto al comienzo de cada contenedor o elemento*/
+    max-width: 400px;                 /*establecemos el max-width en pixeles para que no se salga de control el tamaño de la calculadora, con resoluciones mas altas, pixeles por encima de las otras medidas dado que nos conviene un numero fijo y no responsive*/
+    max-height: 600px;                /*establecemos el max-heigth en pixeles para que no se salga de control el tamaño de la calculadora, con resoluciones mas altas,dado que es una caja con unas medidas especificas que dependen de su contenido,no colocamos valores fijos como con ancho*/
+    width: 90vw;                          
+    height: auto;
+    margin: 0 auto;
+}
+.display{
+    box-sizing: border-box;              /*con esto hacemos que el tamaño del contenedor incluya tanto tading como border y content, debemos procurar establecer esto al comienzo de cada contenedor o elemento*/
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;                        /*quitamos el borde del imput*/
+    font-size: 2rem;                     /*modificamos el tañamo del imput atravez del tamaño de la fuente y el pading dado que es borderbox*/
+    padding: 1rem 0.3rem;                /*modificamos el tañamo del imput atravez del tamaño de la fuente y el pading dado que es borderbox*/
+    text-align: right;                   /*no podemos hacer un justify content al contenido de los imput pero podemos hacer text align*/
+    width: 100%;                         /*modificamos el ancho para que ocupe el 100% del espacio del contenedor es decur 90vw*/
+}
+button {
+    padding: 2rem 1.5rem;
+    font-size: 2rem;
+    border: 1.5px solid #000000;
+    background-color: white;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+  
+}
+.buttons{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.operaciones.doble{
+    grid-column: span 2;
+}
+.operaciones.single{
+    grid-column: span 1;
+}
+.numeros.doble{
+    grid-column: span 2;
+}
+.numeros.single{
+    grid-column: span 1;
+}
+.numeros.triple{
+    grid-column: span 3;
+}
+.numeros.gris{
+    background-color: rgb(207, 207, 207);
+}
+.operaciones.gris{
+    background-color: rgb(207, 207, 207);
+}
+.operaciones.naranja{
+    background-color: orange;
+    color: white;
+}
+.borrar{
+    background-color: rgb(207, 207, 207);
+}
